@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persian AI | هوش مصنوعی پارسی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* اضافه کردن استایل‌های اختصاصی */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: 10vh;
+            opacity: 0;
+            animation: heroEntrance 2s forwards 0.5s;
+        }
+
+        @keyframes heroEntrance {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .title {
+            font-size: 5rem;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+        }
+
+        .buttons {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            opacity: 0;
+            animation: buttonsEntrance 1s forwards 1.5s;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: #0f0c29;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 5rem;
+            width: 100%;
+            max-width: 1200px;
+            opacity: 0;
+            animation: galleryEntrance 1s forwards 2s;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .ai-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            opacity: 0;
+            animation: footerEntrance 1s forwards 2.5s;
+        }
+
+        @keyframes buttonsEntrance {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes galleryEntrance {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes footerEntrance {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3rem;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="particles" id="particles"></canvas>
+    
+    <div class="container">
+        <div class="hero">
+            <h1 class="title">Persian AI</h1>
+            
+            <div class="buttons">
+                <button class="btn btn-primary" onclick="window.open('chat.html')">
+                    <i class="fas fa-comments"></i>
+                    شروع صحبت(رایگان)
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('https://github.com/mr-r0ot/PersianAi/releases/download/PersianAiChatModel/PersianAiChatModel.exe')">
+                    <i class="fab fa-github"></i>
+                    بارگیری Persian Ai Chat Model (رایگان)
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('https://github.com/mr-r0ot/PersianAi/releases/download/PersianAiModelCreator/PersianAiModelCreator.zip')">
+                    <i class="fas fa-download"></i>
+                    بارگیری Persian Ai Model Creator (رایگان و متن باز)
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('https://github.com/mr-r0ot/PersianAi/releases/download/PersianAiChatModel/PersianAiChatModel.exe');window.open('https://github.com/mr-r0ot/PersianAi/releases/download/PersianAiModelCreator/PersianAiModelCreator.zip')">
+                    <i class="fas fa-cogs"></i>
+                    بارگیری  Persian Ai Full Options (رایگان)
+                </button>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="ai-card">
+                <img src="https://source.unsplash.com/random/800x600?ai,tech" alt="AI Model">
+                <h3>مدل PersianAI Model 1.0.0</h3>
+                <p>مدلی زیبا بر پایه هنر و علم طراحی شده با Python3</p>
+            </div>
+            <div class="ai-card">
+                <img src="https://source.unsplash.com/random/800x600?neural,network" alt="AI Model">
+                <h3>پلتفرم PersianAI</h3>
+                <p>قابلیت طراحی و آموزش مدل اختصاصی و استفاده از آن</p>
+            </div>
+            <div class="ai-card">
+                <img src="https://source.unsplash.com/random/800x600?robot,ai" alt="AI Model">
+                <h3>زیبا و رایگان و متن باز</h3>
+                <p>رایگان و متن باز برای برنامه نویسان جهان و دارای حالت ترمینالی و وب گرافیکی</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>توسعه داده شده با ❤️ توسط محمدطاها گرجی</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://github.com/mr-r0ot" target="_blank" style="color: white; text-decoration: none;">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add floating particles
+        function createParticles() {
+            const container = document.querySelector('.particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+    </script>
