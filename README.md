@@ -142,9 +142,11 @@ The **Persian AI Model Manager** offers a comprehensive, flexible platform for c
 - **Deploy models** in both web and terminal environments.
 - **Interact** with your models in real-time, with local history management.
 
-For additional details, refer to our [GitHub repository](https://github.com/YourRepoLink) or contact the developer, **Mohammad Taha Gorji**.
+For additional details, refer to our [GitHub repository](https://github.com/mr-r0ot) or contact the developer, **Mohammad Taha Gorji**.
 
 ---
 
 *Happy Modeling!*
+```
+Coded By Mohammad Taha Gorji
 ```
