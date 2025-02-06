@@ -38,6 +38,10 @@ This documentation covers all commands and workflows required to fully leverage 
   ```bash
   persianai learnweb
   ```
+
+- **PersianAI Website:**
+  You  can online chat with PersianAi 1.0.0 or download Persian Model Creator and see more info in [persianaichat.ir](https://persianaichat.ir)
+
 - **Description:**  
   Launches an interactive web-based interface that allows you to create a new AI model directly in your browser. This mode is ideal for users who prefer a graphical user interface for setting up and monitoring the training process.
 
